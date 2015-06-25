@@ -1,0 +1,24 @@
+{
+  "name": "Stevedore",
+  "version": "0.0.1",
+  "description": "A proxy for docker services",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "doker",
+    "stevedore"
+  ],
+  "author": "Quirino Brizi - quirino.brizi@gmail.com",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.12.4",
+    "request": "~2.58.0",
+    "underscore": "~1.8.3",
+    "cluster": "~0.7.7",
+    "querystring": "~0.2.0",
+    "body-parser": "~1.13.1"
+  }
+}

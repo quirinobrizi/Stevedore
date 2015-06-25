@@ -1,0 +1,587 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bu",
+				"buildUrl"
+			],
+			[
+				"u",
+				"url"
+			],
+			[
+				"que",
+				"query"
+			],
+			[
+				"re",
+				"req"
+			],
+			[
+				"con",
+				"containerResponse"
+			],
+			[
+				"se",
+				"setResponseHeaders"
+			],
+			[
+				"in",
+				"info	(index.js)"
+			],
+			[
+				"do",
+				"docker"
+			],
+			[
+				"ar",
+				"args"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"a",
+				"arguments"
+			],
+			[
+				"pro",
+				"process"
+			],
+			[
+				"i",
+				"info	(logger.js)"
+			],
+			[
+				"get",
+				"getInstance	(logger.js)"
+			],
+			[
+				"scean",
+				"scenarioId"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"test",
+				"testId"
+			],
+			[
+				"key",
+				"keys"
+			],
+			[
+				"for",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"st",
+				"steps"
+			],
+			[
+				"te",
+				"tests"
+			],
+			[
+				"pr",
+				"projectId"
+			],
+			[
+				"va",
+				"var"
+			],
+			[
+				"repe",
+				"repetitionId"
+			],
+			[
+				"project",
+				"projectId"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"whi",
+				"width"
+			],
+			[
+				"cl",
+				"class	Attr"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"ng-c",
+				"ng-click	AngularJS"
+			],
+			[
+				"stat",
+				"stats"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"$route",
+				"$routeParams	AngularJS"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 556,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/index.js",
+			"settings":
+			{
+				"buffer_size": 741,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/stevedore.js",
+			"settings":
+			{
+				"buffer_size": 1333,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n    \"Hostname\": \"\",\n         \"Domainname\": \"\",\n         \"User\": \"\",\n         \"Memory\": 0,\n         \"MemorySwap\": 0,\n         \"CpuShares\": 512,\n         \"Cpuset\": \"0,1\",\n         \"AttachStdin\": false,\n         \"AttachStdout\": true,\n         \"AttachStderr\": true,\n         \"Tty\": false,\n         \"OpenStdin\": false,\n         \"StdinOnce\": false,\n         \"Env\": null,\n         \"Cmd\": [\n                 \"date\"\n         ],\n         \"Entrypoint\": \"\",\n         \"Image\": \"debian:latest\",\n         \"Volumes\": {\n                 \"/tmp\": {}\n         },\n         \"WorkingDir\": \"\",\n         \"NetworkDisabled\": false,\n         \"MacAddress\": \"12:34:56:78:9a:bc\",\n         \"ExposedPorts\": {\n                 \"22/tcp\": {}\n         },\n         \"SecurityOpts\": [\"\"],\n         \"HostConfig\": {\n           \"Binds\": [\"/tmp:/tmp\"],\n           \"Links\": [\"redis3:redis\"],\n           \"LxcConf\": {\"lxc.utsname\":\"docker\"},\n           \"PortBindings\": { \"22/tcp\": [{ \"HostPort\": \"11022\" }] },\n           \"PublishAllPorts\": false,\n           \"Privileged\": false,\n           \"Dns\": [\"8.8.8.8\"],\n           \"DnsSearch\": [\"\"],\n           \"ExtraHosts\": null,\n           \"VolumesFrom\": [\"parent\", \"other:ro\"],\n           \"CapAdd\": [\"NET_ADMIN\"],\n           \"CapDrop\": [\"MKNOD\"],\n           \"RestartPolicy\": { \"Name\": \"\", \"MaximumRetryCount\": 0 },\n           \"NetworkMode\": \"bridge\",\n           \"Devices\": []\n        }\n}",
+			"settings":
+			{
+				"buffer_size": 1385,
+				"line_ending": "Unix",
+				"name": "{"
+			}
+		},
+		{
+			"file": "lib/logger.js",
+			"settings":
+			{
+				"buffer_size": 699,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 369.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"npm sta",
+				"npm: Install and Save Package"
+			],
+			[
+				"npm",
+				"npm: List Installed Packages"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/quirino.brizi/Projects/Codesketch/Stevedore",
+		"/home/quirino.brizi/Projects/Codesketch/Stevedore/lib"
+	],
+	"file_history":
+	[
+		"/home/quirino.brizi/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/quirino.brizi/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/quirino.brizi/Projects/Codesketch/Stevedore/lib/logger.js",
+		"/home/quirino.brizi/.config/sublime-text-3/Packages/User/JavascriptBeautify.sublime-settings",
+		"/home/quirino.brizi/.config/sublime-text-3/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
+		"/home/quirino.brizi/Projects/BBC/Workspace/OpenDJ/cloudformation-infrastructure/config_int.json",
+		"/home/quirino.brizi/Projects/BBC/Workspace/OpenDJ/bake-scripts/00-create-properties.py",
+		"/home/quirino.brizi/.subversion/servers",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/partials/projects.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/partials/scenarios.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/partials/tests-repetitions.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/css/app.css",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/partials/tests-statistics.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/index.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/partials/tests.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/partials/documents.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/partials/documents-detail.html",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/js/app.js",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/css/animations.css",
+		"/home/quirino.brizi/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/js/controllers.js",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/projects/1/tests/1/statistics.json",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/js/services.js",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/projects/1/tests/1",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/package.json",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/bower.json",
+		"/home/quirino.brizi/Projects/Codesketch/Whiteboard/workspace/whiteboard-ui/app/js/animations.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"}\n",
+			"_singletonInstance",
+			"Logger",
+			"ca",
+			"scenarioId",
+			"scenarios",
+			"sceanario",
+			"test",
+			"        \n",
+			"inputEmail3",
+			"rgb(119, 136, 153)",
+			"244"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"_instance",
+			"scenario",
+			"sceanario",
+			"rgb(112, 128, 144)"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 556,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								169,
+								169
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 741,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								572,
+								572
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/stevedore.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								480,
+								498
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1385,
+								1385
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{",
+							"default_dir": "/home/quirino.brizi/Projects/Codesketch/Stevedore",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 79.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "lib/logger.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.textarea":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "",
+	"project": "stevedore.sublime-project",
+	"replace":
+	{
+		"height": 86.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 277.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
