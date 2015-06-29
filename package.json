@@ -5,7 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint/src/reporters/default.js",
+    "checkStyle": "./node_modules/.bin/jscs .",
+    "pretest": "npm run-script lint && npm run-script checkStyle",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R spec -r should",
+    "posttest": "./node_modules/.bin/istanbul check-coverage"
   },
   "keywords": [
     "doker",
@@ -21,6 +25,17 @@
     "querystring": "~0.2.0",
     "body-parser": "~1.13.1",
     "passport": "~0.2.2",
-    "passport-http": "~0.2.2"
+    "passport-http": "~0.2.2",
+    "config": "~1.14.0",
+    "mocha": "~2.2.5"
+  },
+  "devDependencies": {
+    "mocka": "0.0.1",
+    "should": "~7.0.1",
+    "sinon": "~1.15.3",
+    "nock": "~2.6.0",
+    "istanbul": "~0.3.16",
+    "jshint": "~2.8.0",
+    "jscs": "~1.13.1"
   }
 }

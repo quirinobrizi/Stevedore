@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"st",
+				"stevedoreAuth"
+			],
+			[
+				"pass",
+				"passport"
+			],
+			[
+				"use",
+				"username"
+			],
+			[
+				"fun",
+				"function	(index.js)"
+			],
+			[
+				"con",
+				"contains"
+			],
+			[
+				"conta",
+				"containerResponse"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
 				"bu",
 				"buildUrl"
 			],
@@ -20,10 +48,6 @@
 				"req"
 			],
 			[
-				"con",
-				"containerResponse"
-			],
-			[
 				"se",
 				"setResponseHeaders"
 			],
@@ -38,10 +62,6 @@
 			[
 				"ar",
 				"args"
-			],
-			[
-				"fun",
-				"function"
 			],
 			[
 				"res",
@@ -82,10 +102,6 @@
 			[
 				"for",
 				"for	for (…) {…} (Improved Native For-Loop)"
-			],
-			[
-				"st",
-				"steps"
 			],
 			[
 				"te",
@@ -156,18 +172,34 @@
 	"buffers":
 	[
 		{
-			"file": "package.json",
+			"file": "lib/index.js",
 			"settings":
 			{
-				"buffer_size": 556,
+				"buffer_size": 991,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lib/index.js",
+			"file": ".jscsrc",
 			"settings":
 			{
-				"buffer_size": 741,
+				"buffer_size": 1418,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 1149,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/stevedore-auth.js",
+			"settings":
+			{
+				"buffer_size": 787,
 				"line_ending": "Unix"
 			}
 		},
@@ -175,7 +207,7 @@
 			"file": "lib/stevedore.js",
 			"settings":
 			{
-				"buffer_size": 1333,
+				"buffer_size": 1216,
 				"line_ending": "Unix"
 			}
 		},
@@ -186,14 +218,6 @@
 				"buffer_size": 1385,
 				"line_ending": "Unix",
 				"name": "{"
-			}
-		},
-		{
-			"file": "lib/logger.js",
-			"settings":
-			{
-				"buffer_size": 699,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -263,9 +287,12 @@
 	],
 	"file_history":
 	[
+		"/home/quirino.brizi/Projects/Codesketch/Stevedore/README.md",
+		"/home/quirino.brizi/Projects/Codesketch/Stevedore/.gitignore",
+		"/home/quirino.brizi/Projects/Codesketch/Stevedore/lib/logger.js",
+		"/home/quirino.brizi/Projects/Codesketch/Stevedore/package.json",
 		"/home/quirino.brizi/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/quirino.brizi/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/quirino.brizi/Projects/Codesketch/Stevedore/lib/logger.js",
 		"/home/quirino.brizi/.config/sublime-text-3/Packages/User/JavascriptBeautify.sublime-settings",
 		"/home/quirino.brizi/.config/sublime-text-3/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
 		"/home/quirino.brizi/Projects/BBC/Workspace/OpenDJ/cloudformation-infrastructure/config_int.json",
@@ -307,6 +334,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'];\n",
 			"}\n",
 			"_singletonInstance",
 			"Logger",
@@ -345,19 +373,79 @@
 			[
 				{
 					"buffer": 0,
-					"file": "package.json",
+					"file": "lib/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 556,
+						"buffer_size": 991,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								169,
-								169
+								845,
+								845
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".jscsrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1418,
+								1418
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								571,
+								571
 							]
 						],
 						"settings":
@@ -370,31 +458,30 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "lib/index.js",
+					"buffer": 3,
+					"file": "lib/stevedore-auth.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 741,
+						"buffer_size": 787,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								572,
-								572
+								585,
+								585
 							]
 						],
 						"settings":
 						{
 							"open_with_edit": true,
 							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -405,20 +492,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "lib/stevedore.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1333,
+						"buffer_size": 1216,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								480,
-								498
+								165,
+								165
 							]
 						],
 						"settings":
@@ -431,11 +518,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"semi_transient": false,
 					"settings":
 					{
@@ -459,40 +546,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 79.0,
+						"translation.y": 78.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "lib/logger.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 699,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								225,
-								225
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
