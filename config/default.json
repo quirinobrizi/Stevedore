@@ -1,0 +1,12 @@
+{
+  "authentication": {
+    "type": "basic",
+    "provider": {
+      "module": "../providers/authentication",
+      "function": "basic"
+    }
+  },
+  "server": {
+    "port": 3000
+  }
+}

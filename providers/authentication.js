@@ -1,7 +1,7 @@
 module.exports = {
 
-  basic: function(credential) {
+  basic: function(credential, cb) {
     console.log("on authentication provider %j", credential);
-    return credential.username === 'q' && credential.password === 'q';
+    cb(null, credential.username === 'q' && credential.password === 'q');
   }
 };
