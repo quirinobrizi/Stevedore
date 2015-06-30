@@ -5,9 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js",
-    "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint/src/reporters/default.js",
-    "checkStyle": "./node_modules/.bin/jscs .",
-    "pretest": "npm run-script lint && npm run-script checkStyle",
+    "lint": "./node_modules/.bin/jshint ./lib --reporter=./node_modules/jshint/src/reporters/default.js",
+    "checkStyle": "./node_modules/.bin/jscs ./lib",
+    "pretest": "npm run-script lint",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R spec -r should",
     "posttest": "./node_modules/.bin/istanbul check-coverage"
   },
