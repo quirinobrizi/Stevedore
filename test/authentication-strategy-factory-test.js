@@ -16,7 +16,7 @@
 
 var assert = require("assert"),
   should = require('should'),
-  auth = require('../lib/stevedore-auth');
+  auth = require('../lib/authentication-strategy-factory');
 
 describe('stevedore authentication module', function() {
 

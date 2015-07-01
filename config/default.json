@@ -7,7 +7,7 @@
     },
     "whitelist": [{
       "verb": "GET",
-      "path": "/version"
+      "path": "/stevedore/version"
     }]
   },
   "server": {
