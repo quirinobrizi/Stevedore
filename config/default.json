@@ -4,7 +4,11 @@
     "provider": {
       "module": "../providers/authentication",
       "function": "basic"
-    }
+    },
+    "whitelist": [{
+      "verb": "GET",
+      "path": "/stevedore/version"
+    }]
   },
   "server": {
     "port": 3000

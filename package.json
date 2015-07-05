@@ -3,20 +3,24 @@
   "version": "0.0.1",
   "description": "A proxy for docker services",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quirinobrizi/Stevedore.git"
+  },
   "scripts": {
     "start": "node lib/index.js",
-    "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint/src/reporters/default.js",
-    "checkStyle": "./node_modules/.bin/jscs .",
-    "pretest": "npm run-script lint && npm run-script checkStyle",
+    "lint": "./node_modules/.bin/jshint ./lib --reporter=./node_modules/jshint/src/reporters/default.js",
+    "checkStyle": "./node_modules/.bin/jscs ./lib",
+    "pretest": "npm run-script lint",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R spec -r should",
     "posttest": "./node_modules/.bin/istanbul check-coverage"
   },
   "keywords": [
-    "doker",
+    "docker",
     "stevedore"
   ],
   "author": "Quirino Brizi - quirino.brizi@gmail.com",
-  "license": "BSD-2-Clause",
+  "license": "Apache-2.0",
   "dependencies": {
     "express": "~4.12.4",
     "request": "~2.58.0",
@@ -30,7 +34,6 @@
     "mocha": "~2.2.5"
   },
   "devDependencies": {
-    "mocka": "0.0.1",
     "should": "~7.0.1",
     "sinon": "~1.15.3",
     "nock": "~2.6.0",
