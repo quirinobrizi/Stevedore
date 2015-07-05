@@ -34,7 +34,6 @@
     "mocha": "~2.2.5"
   },
   "devDependencies": {
-    "mocka": "0.0.1",
     "should": "~7.0.1",
     "sinon": "~1.15.3",
     "nock": "~2.6.0",
