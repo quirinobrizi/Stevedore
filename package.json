@@ -31,7 +31,8 @@
     "passport": "~0.2.2",
     "passport-http": "~0.2.2",
     "config": "~1.14.0",
-    "mocha": "~2.2.5"
+    "mocha": "~2.2.5",
+    "https": "~1.0.0"
   },
   "devDependencies": {
     "should": "~7.0.1",
