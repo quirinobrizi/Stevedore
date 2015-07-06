@@ -19,7 +19,7 @@ var assert = require("assert"),
   sinon = require('sinon'),
   mockery = require('mockery');
 
-describe('service configurer module', function () {
+describe('service configurer module', function() {
 
   var express,
     expressInstance,
@@ -29,18 +29,19 @@ describe('service configurer module', function () {
     serviceConfigurer,
     options,
     https,
+    fs,
     authMock,
     passportMock,
     bodyParserMock,
     expressMock,
     httpsMock,
-    stevedore = function () {
+    stevedore = function() {
       return {
-        docker: function () {}
+        docker: function() {}
       }
     };
 
-  before(function () {
+  before(function() {
 
     mockery.enable({
       warnOnReplace: false,
@@ -49,37 +50,44 @@ describe('service configurer module', function () {
     });
 
     expressInstance = {
-      use: function () {},
-      get: function () {},
-      all: function () {},
-      listen: function () {}
+      use: function() {},
+      get: function() {},
+      all: function() {},
+      listen: function() {}
     };
 
-    express = function () {
+    express = function() {
       return expressInstance;
     };
     passport = {
-      initialize: function () {},
-      use: function () {},
-      authenticate: function () {}
+      initialize: function() {},
+      use: function() {},
+      authenticate: function() {}
     };
     bodyParser = {
-      json: function () {}
+      json: function() {}
     };
     auth = {
-      instance: function () {}
+      instance: function() {}
     };
     serviceConfigurer,
     options = {
-      get: function () { /*get*/ }
+      get: function() { /*get*/ }
     };
 
     https = {
-        createServer: function (o, f) {
-          console.log("CREATE SERVER");
-          return this;
-        },
-        listen: function() {}
+      createServer: function(o, f) {
+        return this;
+      },
+      listen: function() {}
+    };
+
+    fs = {
+      readFileSync: function() {
+        return {
+          'from': 'fs-stub'
+        };
+      }
     };
 
     mockery.registerMock('express', express);
@@ -87,17 +95,18 @@ describe('service configurer module', function () {
     mockery.registerMock('body-parser', bodyParser);
     mockery.registerMock('./authentication-strategy-factory', auth);
     mockery.registerMock('https', https);
+    mockery.registerMock('fs', fs);
     mockery.registerMock('./stevedore', stevedore);
 
     serviceConfigurer = require('../lib/service-configurer');
   });
 
-  after(function () {
+  after(function() {
     mockery.disable();
   });
 
-  describe('configure', function () {
-    it('should throw error when configuration options are not provided', function () {
+  describe('configure', function() {
+    it('should throw error when configuration options are not provided', function() {
       try {
         serviceConfigurer.configure();
         assert.fail("configure method should have thrown error as options has not been provided");
@@ -106,13 +115,12 @@ describe('service configurer module', function () {
       }
     });
 
-    it('should throw error when whitelist endpoint configuration is not valid', function () {
+    it('should throw error when whitelist endpoint configuration is not valid', function() {
 
       var authMock = sinon.mock(auth);
       var passportMock = sinon.mock(passport);
       var bodyParserMock = sinon.mock(bodyParser);
       var expressMock = sinon.mock(expressInstance);
-      var httpsMock = sinon.mock(https);
 
       var authenticationConf = {
           "type": "basic",
@@ -161,13 +169,12 @@ describe('service configurer module', function () {
       stub.restore();
     });
 
-    it('should configure whitelist endpoint as well as proxy endpoint', function () {
+    it('should configure whitelist endpoint as well as proxy endpoint', function() {
 
       var authMock = sinon.mock(auth);
       var passportMock = sinon.mock(passport);
       var bodyParserMock = sinon.mock(bodyParser);
       var expressMock = sinon.mock(expressInstance);
-      var httpsMock = sinon.mock(https);
 
       var authenticationConf = {
           "type": "basic",
@@ -178,7 +185,7 @@ describe('service configurer module', function () {
           "whitelist": [{
             "verb": "GET",
             "path": "/stevedore/version"
-        }]
+          }]
         },
         passportInitializeExpectation = passportMock.expects('initialize'),
         authInstanceExpectation = authMock.expects('instance').withExactArgs(authenticationConf),
@@ -209,7 +216,7 @@ describe('service configurer module', function () {
       stub.restore();
     });
 
-    it('should configure whitelist endpoint as well as proxy endpoint using https', function () {
+    it('should configure whitelist endpoint as well as proxy endpoint using https', function() {
 
       var authMock = sinon.mock(auth);
       var passportMock = sinon.mock(passport);
@@ -217,12 +224,13 @@ describe('service configurer module', function () {
       var expressMock = sinon.mock(expressInstance);
       var httpsMock = sinon.mock(https);
 
-      var authInstanceExpectation = authMock.expects('instance'),
-        passportInitializeExpectation = passportMock.expects('initialize'),
-        expressUseExpectations = expressMock.expects('use').twice(),
-        expressListenExpectations = expressMock.expects('listen').never(),
-        bodyParserJsonExpectation = bodyParserMock.expects('json').once(),
-        authenticationConf = {
+      authMock.expects('instance');
+      passportMock.expects('initialize');
+      expressMock.expects('use').twice();
+      expressMock.expects('listen').never();
+      bodyParserMock.expects('json').once();
+
+      var authenticationConf = {
           "type": "basic",
           "provider": {
             "module": "../providers/authentication",
@@ -233,9 +241,7 @@ describe('service configurer module', function () {
             "path": "/stevedore/version"
           }]
         },
-        httpsCreateServerExpectetion = httpsMock.expects('createServer')
-        .withArgs({}, expressInstance);
-      stub = sinon.stub(options, 'get');
+        stub = sinon.stub(options, 'get');
 
       stub.withArgs('authentication')
         .returns(authenticationConf);
@@ -249,16 +255,18 @@ describe('service configurer module', function () {
       stub.withArgs('server.https')
         .returns(true);
       stub.withArgs('server.https_options')
-        .returns({});
+        .returns({
+          'pfx': 'cert.p12'
+        });
 
       // act
       serviceConfigurer.configure(options);
 
+      // verify
       authMock.verify();
       passportMock.verify();
       bodyParserMock.verify();
       expressMock.verify();
-      httpsMock.verify();
 
       stub.restore();
     });

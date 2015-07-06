@@ -18,5 +18,9 @@ module.exports = {
 
   basic: function(credential, cb) {
     cb(null, credential.username === 'test' && credential.password === 'stevedore');
+  },
+
+  clientCertificate: function(certificate, cb) {
+    cb(null, certificate.subject.cn === 'valid cn');
   }
 };

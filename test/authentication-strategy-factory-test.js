@@ -21,6 +21,19 @@ var assert = require("assert"),
 describe('stevedore authentication module', function() {
 
   describe('instance', function() {
+
+    it('should throw error when authentication type is not provided', function() {
+      var options = {
+        type: null
+      };
+      try {
+        auth.instance(options);
+        assert.fail("instance method should have thrown error as authentication type is not provided");
+      } catch (e) {
+        assert.equal(e.message, "authentication type must be provided");
+      }
+    });
+
     it('should throw error when authentication type is not supported', function() {
       var options = {
         type: 'unsupported'
@@ -80,7 +93,7 @@ describe('stevedore authentication module', function() {
         type: 'basic',
         provider: {
           "module": "../test/fixtures/authentication",
-          "function": "my-function"
+          "function": "basic"
         }
       };
       var authenticator = auth.instance(options);
@@ -103,6 +116,35 @@ describe('stevedore authentication module', function() {
       authenticator.authenticate({
         "headers": {
           "authorization": "Basic dGVzdDpzdGV2ZWRvcmU="
+        }
+      });
+    });
+
+    it('authenticator should use client certificate defined authentication provider', function() {
+      var options = {
+        type: 'client-cert',
+        provider: {
+          "module": "../test/fixtures/authentication",
+          "function": "clientCertificate"
+        }
+      };
+      var authenticator = auth.instance(options);
+      assert.notEqual(authenticator, null);
+      authenticator.success = function(actual) {
+        actual.should.be.true;
+      };
+      authenticator.authenticate({
+        'client': {
+          'authorized': true
+        },
+        "connection": {
+          getPeerCertificate: function() {
+            return {
+              'subject': {
+                'cn': 'valid cn'
+              }
+            };
+          }
         }
       });
     });
