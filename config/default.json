@@ -1,9 +1,9 @@
 {
   "authentication": {
-    "type": "client-cert",
+    "type": "basic",
     "provider": {
       "module": "../providers/authentication",
-      "function": "clientCertificate"
+      "function": "basic"
     },
     "whitelist": [{
       "verb": "GET",
@@ -12,12 +12,7 @@
   },
   "server": {
     "port": 3000,
-    "https": true,
-    "https_options": {
-      "pfx": "/home/quirino/Projects/Codesketch/Stevedore/resources/service.p12",
-      "passphrase": "service",
-      "key": "/home/quirino/Projects/Codesketch/Stevedore/resources/key.pem",
-      "cert": "/home/quirino/Projects/Codesketch/Stevedore/resources/key-cert.pem"
-    }
+    "https": false,
+    "https_options": {}
   }
 }
