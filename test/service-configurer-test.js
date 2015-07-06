@@ -28,10 +28,18 @@ describe('service configurer module', function() {
     auth,
     serviceConfigurer,
     options,
+    https,
+    fs,
     authMock,
     passportMock,
     bodyParserMock,
-    expressMock;
+    expressMock,
+    httpsMock,
+    stevedore = function() {
+      return {
+        docker: function() {}
+      }
+    };
 
   before(function() {
 
@@ -67,26 +75,34 @@ describe('service configurer module', function() {
       get: function() { /*get*/ }
     };
 
-    authMock = sinon.mock(auth);
-    passportMock = sinon.mock(passport);
-    bodyParserMock = sinon.mock(bodyParser);
-    expressMock = sinon.mock(expressInstance);
+    https = {
+      createServer: function(o, f) {
+        return this;
+      },
+      listen: function() {}
+    };
+
+    fs = {
+      readFileSync: function() {
+        return {
+          'from': 'fs-stub'
+        };
+      }
+    };
 
     mockery.registerMock('express', express);
     mockery.registerMock('passport', passport);
     mockery.registerMock('body-parser', bodyParser);
     mockery.registerMock('./authentication-strategy-factory', auth);
+    mockery.registerMock('https', https);
+    mockery.registerMock('fs', fs);
+    mockery.registerMock('./stevedore', stevedore);
 
     serviceConfigurer = require('../lib/service-configurer');
   });
 
   after(function() {
     mockery.disable();
-
-    authMock.restore();
-    passportMock.restore();
-    bodyParserMock.restore();
-    expressMock.restore();
   });
 
   describe('configure', function() {
@@ -100,6 +116,12 @@ describe('service configurer module', function() {
     });
 
     it('should throw error when whitelist endpoint configuration is not valid', function() {
+
+      var authMock = sinon.mock(auth);
+      var passportMock = sinon.mock(passport);
+      var bodyParserMock = sinon.mock(bodyParser);
+      var expressMock = sinon.mock(expressInstance);
+
       var authenticationConf = {
           "type": "basic",
           "provider": {
@@ -123,7 +145,6 @@ describe('service configurer module', function() {
         expressUseExpectations = expressMock
         .expects('use')
         .twice();
-      // .withArgs(passportInitializeExpectation, bodyParserJsonExpectation);
       var stub = sinon.stub(options, 'get');
       try {
         stub.withArgs('authentication')
@@ -133,29 +154,83 @@ describe('service configurer module', function() {
             "verb": "GET",
             "path": "/version"
           }]);
+        // act
         serviceConfigurer.configure(options);
         assert.fail("configure method should have thrown error as valid whitelist endpoint configuration has not been provided");
       } catch (e) {
         assert.equal(e.message, "whitelist path should be on the form /stevedore/.*");
       }
+
       authMock.verify();
       passportMock.verify();
       bodyParserMock.verify();
       expressMock.verify();
+
       stub.restore();
     });
 
     it('should configure whitelist endpoint as well as proxy endpoint', function() {
-      var authInstanceExpectation = sinon.mock(auth)
-        .expects('instance'),
-        passportInitializeExpectation = sinon.mock(passport)
-        .expects('initialize'),
-        expressUseExpectations = sinon.mock(expressInstance)
-        .expects('use')
-        .twice(),
-        bodyParserJsonExpectation = sinon.mock(bodyParser)
-        .expects('json'),
-        authenticationConf = {
+
+      var authMock = sinon.mock(auth);
+      var passportMock = sinon.mock(passport);
+      var bodyParserMock = sinon.mock(bodyParser);
+      var expressMock = sinon.mock(expressInstance);
+
+      var authenticationConf = {
+          "type": "basic",
+          "provider": {
+            "module": "../providers/authentication",
+            "function": "basic"
+          },
+          "whitelist": [{
+            "verb": "GET",
+            "path": "/stevedore/version"
+          }]
+        },
+        passportInitializeExpectation = passportMock.expects('initialize'),
+        authInstanceExpectation = authMock.expects('instance').withExactArgs(authenticationConf),
+        expressUseExpectations = expressMock.expects('use').twice(),
+        expressListenExpectations = expressMock.expects('listen').withArgs(8000),
+        bodyParserJsonExpectation = bodyParserMock.expects('json').once(),
+        stub = sinon.stub(options, 'get');
+
+      stub.withArgs('authentication')
+        .returns(authenticationConf);
+      stub.withArgs('authentication.whitelist')
+        .returns([{
+          "verb": "GET",
+          "path": "/stevedore/version"
+        }]);
+      stub.withArgs('server.port')
+        .returns(8000);
+      stub.withArgs('server.https')
+        .returns(false);
+
+      serviceConfigurer.configure(options);
+
+      passportMock.verify();
+      authMock.verify();
+      bodyParserMock.verify();
+      expressMock.verify();
+
+      stub.restore();
+    });
+
+    it('should configure whitelist endpoint as well as proxy endpoint using https', function() {
+
+      var authMock = sinon.mock(auth);
+      var passportMock = sinon.mock(passport);
+      var bodyParserMock = sinon.mock(bodyParser);
+      var expressMock = sinon.mock(expressInstance);
+      var httpsMock = sinon.mock(https);
+
+      authMock.expects('instance');
+      passportMock.expects('initialize');
+      expressMock.expects('use').twice();
+      expressMock.expects('listen').never();
+      bodyParserMock.expects('json').once();
+
+      var authenticationConf = {
           "type": "basic",
           "provider": {
             "module": "../providers/authentication",
@@ -175,12 +250,24 @@ describe('service configurer module', function() {
           "verb": "GET",
           "path": "/stevedore/version"
         }]);
+      stub.withArgs('server.port')
+        .returns(8443);
+      stub.withArgs('server.https')
+        .returns(true);
+      stub.withArgs('server.https_options')
+        .returns({
+          'pfx': 'cert.p12'
+        });
+
+      // act
       serviceConfigurer.configure(options);
 
-      passportInitializeExpectation.once();
-      bodyParserJsonExpectation.once();
-      authInstanceExpectation.withExactArgs(authenticationConf);
-      expressUseExpectations.withArgs(passportInitializeExpectation, bodyParserJsonExpectation);
+      // verify
+      authMock.verify();
+      passportMock.verify();
+      bodyParserMock.verify();
+      expressMock.verify();
+
       stub.restore();
     });
   });
